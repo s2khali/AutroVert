@@ -1,0 +1,147 @@
+#mainContainer {
+  display: block;
+}
+
+.leftColumn {
+  margin-top: 15px;
+  float: left;
+  display: block;
+  width: 150px;
+}
+
+.leftNavHeader{
+  padding: 0;
+  margin: 0;
+  color: #444444;
+}
+
+.leftNavUL {
+  padding: 0 0 10px 0;
+  margin: 0;
+}
+
+// QUICK LINKS
+
+
+#quickLinks {
+  display: block;
+  width: inherit;
+  background: transparent;
+  top: 15px;
+  position: absolute;
+  border-radius: 2px;
+}
+
+.buttonWrapper {
+  margin: 5px 0;
+}
+
+.quickButton {
+  display: block;
+  height: 28px;
+  line-height: 20px;
+  background-color: #eeeeee;
+  padding: 2px 10px;
+  border: solid 1px #d2d2d2;
+  border-radius: 1px;
+  white-space: nowrap;
+  text-decoration: none;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.quickFont {
+  max-width: 150px;
+  font-size: 12px;
+  color: #666666;
+  font-weight: bold;
+}
+
+// CENTER COLUMN
+
+.centerColumn {
+  margin-top: 15px;
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  min-width: 300px;
+  float: left;
+  margin-left: 20px;
+}
+
+// STATUS BOX
+
+#status-wrapper {
+  float: left;
+  display: block;
+  height: 100%;
+  width: inherit;
+  background: #ffffff;
+  border: 1px solid #c3c3c3;
+  border-radius: 2px;
+}
+
+#post-type {
+  display: flex;
+  border-bottom: 1px solid #d2d2d2;
+  padding: 4px 1px;
+}
+
+.spanPost {
+  padding: 2px 4px;
+}
+
+.postType {
+  font-size: 13px;
+  text-decoration: none;
+  padding: 4px 4px;
+  font-weight: bold;
+  color: #b00f1f;
+}
+
+.postType[aria-selected='true']{
+  color: #737373;
+}
+
+
+// REGULAR POST
+
+#postText {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid #d2d2d2;
+  height: auto;
+}
+
+#postTextArea {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border:none;
+  font-family: "Now", sans-serif;
+  font-size: 20px;
+  outline: none;
+}
+
+#submitButtonWrapper {
+  float: right;
+  margin: 5px 5px;
+}
+
+#postSubmit {
+  font-family: "Computer Modern Sans", sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #b00f1f;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #9b0910;
+  height: 22.5px;
+  width: 65px;
+  cursor: pointer;
+}
+
+

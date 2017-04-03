@@ -1,0 +1,382 @@
+
+
+#main-photo {
+  height: 400px;
+}
+
+#profile-top-section {
+  background-color: #FFFFFF !important;
+  justify-content: center;
+}
+
+#profile-nav-bar {
+  border-bottom: 1px solid #d2d2d2;
+  border-left: 1px solid #d2d2d2;
+  border-right: 1px solid #d2d2d2;
+  -webkit-border-radius:2px;
+  -moz-border-radius:2px;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  clear: right;
+  width: 1000px;
+  max-height: 38px;
+}
+
+#main-photo {
+  width: 1000px;
+}
+
+#updateMainPic {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+
+#updateMainButton{
+  text-decoration:none;
+  background-color: #BE253D;
+  height: 100%;
+  width: 100%;
+  padding: 10px 5px;
+  border: 2px solid #444444;
+  border-radius: 3px;
+}
+
+#updateMainPic {
+  opacity: 0.25;
+}
+
+#updateMainIcon {
+  position: relative;
+  bottom: -8px;
+  height: 30px;
+  width: 30px;
+}
+
+#updateMainText {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: bold;
+  position: relative;
+  left: 2.5px;
+  text-shadow: -1px -1px 0 #595959,
+  1px -1px 0 #595959,
+  -1px 1px 0 #595959,
+  1px 1px 0 #595959;
+  display: none;
+  overflow: hidden;
+}
+
+// NAV BAR
+
+#right-nav-bar {
+  align-items: flex-start;
+  max-height: 38px;
+  border-bottom: 1.5px solid #c3c3c3;
+
+  .navAButton {
+    border-left: 2px solid #c3c3c3;
+  }
+}
+
+#left-nav-bar {
+  align-items: flex-end;
+  max-height: 38px;
+  border-bottom: 1.5px solid #c3c3c3;
+
+  .navAButton {
+    border-right: 2px solid #c3c3c3;
+  }
+}
+
+.navAButton {
+  color: #b00f1f;
+  font-family: "Computer Modern Sans", sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  min-height: 50px;
+  position: relative;
+  width: 100%;
+  font-size: 19px;
+  padding: 5px 10px;
+  line-height: 2;
+  margin-top: 5px;
+}
+
+// CENTER BUTTON
+#center-nav-bar {
+  display: flex;
+  background-color: #ffffff;
+  border-left: 2px solid #c3c3c3;
+  border-right: 2px solid #c3c3c3;
+  border-bottom: 2.5px solid #c3c3c3;
+  min-width: 250px;
+  height: 65px !important;
+  text-align: center;
+}
+
+#garage {
+  border: none !important;
+  margin: 0 auto;
+}
+
+#centerNav {
+  padding: 5px 30px 10px;
+  border: none !important;
+  line-height: 1.3;
+}
+
+// PROFILE ACTIONS
+.profileActions {
+  position: absolute;
+  display: flex;
+  top: 362px;
+  left: 0;
+}
+.navButton {
+  position: relative;
+  float: left;
+  margin: 0 10px;
+  border: 2px solid #d2d2d2;
+  border-radius: 2px;
+}
+
+.actionButton {
+  color: #444444;
+  text-decoration: none;
+  font-family: "Computer Modern Sans", sans-serif;
+  font-weight: bold;
+  padding: 3px 10px;
+  border: none;
+  background-color: #eeeeee;
+  cursor: pointer;
+}
+
+
+
+// RIGHT COLUMN
+
+#left-column {
+  margin-top: 35px;
+  float: left;
+  width: 300px;
+  display: block;
+}
+
+// PROFILE PIC
+
+#profile-pic-wrapper {
+  display: block;
+  background-color: #ffffff;
+  border: 1px solid #d2d2d2;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 1px;
+  position: absolute;
+}
+
+#profile-picture {
+  display: block;
+  height: 256px;
+  width: 256px;
+  background-color: #ffffff;
+  border: 5px solid #ffffff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+#updateProfPic {
+  display:none;
+  height: 100%;
+  width: 100%;
+  opacity: 0.8;
+}
+
+#updateProfPicButton {
+  text-decoration:none;
+  background-color: #BE253D;
+  border: 2px solid #444444;
+  width: 245px;
+  border-radius: 3px;
+  position: absolute;
+  left: 7px;
+  bottom: 6px;
+}
+
+#updateProfIcon {
+  float: left;
+  margin:2px 6px;
+  width: 30px;
+  height: 30px;
+}
+
+#updateProfText {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: bold;
+  position: relative;
+  left: 2.5px;
+  text-shadow: -1px -1px 0 #595959,
+  1px -1px 0 #595959,
+  -1px 1px 0 #595959,
+  1px 1px 0 #595959;
+  overflow: hidden;
+  float: right;
+  top: 8px;
+  padding-right: 10px;
+}
+
+// CENTER COLUMN
+
+#center-column {
+  display: block;
+  float: left;
+  width: 700px;
+  margin-top: 55px;
+}
+
+// STATUS BOX
+
+#status-wrapper {
+  float: right;
+  display: block;
+  height: 100%;
+  width: 600px;
+  background: #ffffff;
+  border: 1px solid #c3c3c3;
+  border-radius: 2px;
+}
+
+#post-type {
+  display: flex;
+  border-bottom: 1px solid #d2d2d2;
+  padding: 4px 1px;
+}
+
+.spanPost {
+  padding: 2px 4px;
+  border-right: 1px solid #c3c3c3;
+}
+
+.postType {
+  font-size: 13px;
+  text-decoration: none;
+  padding: 4px 4px;
+  font-weight: bold;
+  color: #b00f1f;
+}
+
+.postType[aria-selected='true']{
+  color: #737373;
+}
+
+
+// REGULAR POST
+
+#postText {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid #d2d2d2;
+  height: auto;
+}
+
+#postTextArea {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border:none;
+  font-family: "Now", sans-serif;
+  font-size: 20px;
+  outline: none;
+}
+
+#submitButtonWrapper {
+  float: right;
+  margin: 5px 5px;
+}
+
+#postSubmit {
+  font-family: "Computer Modern Sans", sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #b00f1f;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #9b0910;
+  height: 22.5px;
+  width: 65px;
+  cursor: pointer;
+}
+
+// PHOTO UPLOAD
+
+#photoPostType {
+  display: flex;
+  width: 100%;
+  height: 100%
+}
+
+#uploadArea {
+
+}
+
+// BUILD UPDATE
+
+#buildNewOrSearch {
+  display: flex;
+  border-bottom: 1px solid #d2d2d2;
+  padding: 4px 1px;
+  width: 100%;
+}
+
+.buildSelection {
+  font-size: 13px;
+  text-decoration: none;
+  padding: 4px 4px;
+  font-weight: bold;
+  color: #b00f1f;
+}
+
+#buildText {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid #d2d2d2;
+  height: auto;
+}
+
+#buildTextArea {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border:none;
+  font-family: "Now", sans-serif;
+  font-size: 20px;
+  outline: none;
+}
+
+.spanBuild {
+  padding: 2px 4px;
+  border-right: 1px solid #c3c3c3;
+}
+
+#searchBuilds {
+  border: none;
+  padding-left: 6px;
+}
+
+// RIGHT COLUMN
+
+
+
+
+
+
+
+
+
