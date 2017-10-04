@@ -1,0 +1,369 @@
+// STATUS BOX
+
+#status-wrapper {
+  float: left;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #c3c3c3;
+  border-radius: 2px;
+}
+
+#post-type {
+  display: flex;
+  border-bottom: 1px solid #d2d2d2;
+  padding: 4px 1px;
+}
+
+.spanPost {
+  padding: 2px 4px;
+  border-right: 1px solid #c3c3c3;
+  cursor: pointer;
+}
+
+.postType {
+  font-size: 13px;
+   margin-right: 5px;
+  padding: 4px 4px;
+  font-weight: bold;
+  color: #9b0f1c;
+}
+
+.postType[aria-selected='true']{
+  color: #737373;
+}
+
+
+// REGULAR POST
+
+#postText {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid #d2d2d2;
+  height: auto;
+}
+
+#postTextArea {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border:none;
+  font-family: "Now", sans-serif;
+  font-size: 20px;
+  outline: none;
+}
+
+#submitButtonWrapper {
+  float: right;
+  margin: 5px 5px;
+}
+
+#postSubmit {
+  font-family: "Computer Modern Sans", sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #b00f1f;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #9b0910;
+  height: 22.5px;
+  width: 65px;
+  cursor: pointer;
+}
+
+// FEED
+
+#feed {
+  width: 100%;
+  height: 100%;
+  display: block;
+  float: left;
+}
+
+// BUILD UPDATE
+
+#buildNewOrSearch {
+  display: flex;
+  border-bottom: 1px solid #d2d2d2;
+  padding: 4px 1px;
+  width: 100%;
+}
+
+.buildSelection {
+  font-size: 13px;
+  text-decoration: none;
+  padding: 4px 4px;
+  font-weight: bold;
+  color: #b00f1f;
+}
+
+#buildText {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid #d2d2d2;
+  height: auto;
+}
+
+#buildTextArea {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border:none;
+  font-family: "Now", sans-serif;
+  font-size: 20px;
+  outline: none;
+}
+
+.spanBuild {
+  padding: 2px 4px;
+  border-right: 1px solid #c3c3c3;
+}
+
+#searchBuilds {
+  border: none;
+  padding-left: 6px;
+}
+
+// FEED POST
+
+.postWrapper {
+  float: left;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #c3c3c3;
+  border-radius: 2px;
+  padding: 2px;
+  margin-top: 10px;
+  &:hover {
+      background: #f5f5f5;
+  }
+}
+
+.postHeader {
+  height: 100%;
+  width: 100%;
+  padding: 5px 5px;
+  vertical-align: top;
+  display: flex;
+  justify-content: space-between;
+}
+
+.posterProfile {
+  float: left;
+  position: relative;
+}
+
+.posterProfileA {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "Computer Modern Sans", sans-serif;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  line-height: 30px;
+  color: #9b0910;
+}
+
+.posterPic {
+  vertical-align: inherit;
+  height: 45px;
+  width: 45px;
+  margin-right: 8px;
+}
+
+.postTime {
+  position: absolute;
+  font-size: 12px;
+  font-family: "Computer Modern Sans", sans-serif;
+  top: 28px;
+  left: 53px;
+  white-space: nowrap;
+}
+
+.postBody {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border:none;
+  font-family: "Computer Modern Sans", sans-serif;
+  font-size: 18px;
+  outline: none;
+}
+
+.postFooter {
+  display: flex;
+  width: 100%;
+  height: 30px;
+  padding-top: 5px;
+  border-top: 1px solid #dfdfdf;
+}
+
+.postLikes {
+  vertical-align: top;
+  line-height: 20px;
+}
+
+.footerButton{
+  font-family: "Computer Modern Sans", sans-serif;
+  color: #4d4d4d;
+  font-weight: bold;
+  padding: 5px 10px;
+  margin: 0 15px;
+  vertical-align: top;
+  line-height: 27px;
+  cursor: pointer;
+  span {
+    color: #4d4d4d;
+  }
+}
+
+.footerIcon {
+  width: 20px;
+  height: 20px;
+  vertical-align: inherit;
+  margin-right: 7px;
+}
+
+#likeRed {
+  color: #c93d43
+}
+
+#likeGrey {
+  color: #4d4d4d
+}
+
+.postComments {
+  vertical-align: top;
+  line-height: 20px;
+}
+
+.dropDownIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.dropDownButton {
+  cursor: pointer;
+  padding: 2px;
+}
+
+// POST MODAL
+
+.postModalWrapper {
+  z-index: 1010;
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  height: auto;
+  width: 700px;
+  margin-left: -425px;
+  background: #ffffff;
+  border: 1px solid #c3c3c3;
+  border-radius: 4px;
+  padding: 5px;
+  overflow: auto;
+}
+
+.modalHeader {
+  height: 100%;
+  width: 100%;
+  vertical-align: top;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.modalPosterProf {
+  float: left;
+  position: relative;
+}
+
+.posterProfileModal {
+  text-decoration: none;
+  font-size: 24px;
+  font-family: "Computer Modern Sans", sans-serif;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  line-height: 50px;
+  color: #9b0910;
+}
+
+.posterPicModal {
+  vertical-align: inherit;
+  height: 70px;
+  width: 70px;
+  margin-right: 15px;
+}
+
+.modalBody {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border:none;
+  font-family: "Computer Modern Sans", sans-serif;
+  font-size: 30px;
+  outline: none;
+}
+
+.modalPostActions {
+  border-top: 1px solid #c3c3c3;
+  padding: 10px 0;
+}
+
+.modalDate {
+  float: right;
+  font-size: 12px;
+  font-weight: bold;
+  color: #4d4d4d;
+  margin-right: 25px;
+}
+
+.modalComments {
+  border-top: 1px solid #c3c3c3;
+}
+
+.commentComposer {
+  margin-top: 15px;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.commentProfPic {
+  vertical-align: inherit;
+  justify-content: flex-start;
+  height: 40px;
+  height: 40px;
+  margin-left: 25px;
+}
+
+.commentText {
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.commentTextArea {
+  background-color: #ffffff;
+  height: 100%;
+  width: 350px;
+  margin-left: 10px;
+  resize: none;
+  font-family: "Now", sans-serif;
+  font-size: 13px;
+  outline: none;
+  overflow: hidden;
+}
+
+
+
