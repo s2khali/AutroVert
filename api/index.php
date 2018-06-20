@@ -1,6 +1,5 @@
 <?php
 require_once ("DB.php");
-$db = new DB("localhost", "autrovert", "root", "");
 
 const WEEK = 60 * 60 * 24 * 7;
 const THREE_DAY = 60 * 60 * 24 * 3;
@@ -125,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
                 http_response_code(401);
             }
         } else {
-            echo '{ "Error": "Invalid Username or Password!" }';
+            echo '{ "Error": "Invalid Username" }';
             http_response_code(401);
         }
     } else if($_GET['url'] == 'like') {

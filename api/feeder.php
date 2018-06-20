@@ -1,26 +1,25 @@
 <?php
 require_once ("DB.php");
-$db = new DB("localhost", "autrovert", "root", "");
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
     $page = $_GET['page'];
-    $token = $_COOKIE['SNID'];
-    $user_id = $db->query("SELECT user_id FROM login_tokens WHERE token=:token", array(':token' => sha1($token)))[0]['user_id'];
+    $user_id = $_SESSION['user'];
 
-    if ($page == 'home') {
-        $followingposts = $db->query('SELECT posts.id, posts.body, posts.date_posted, posts.likes, posts.comments, users.`username` FROM users, posts, followers
+    if ($page === '') {
+        $followingposts = $db->query("SELECT posts.id, posts.type, posts.body, posts.date_posted, posts.likes, posts.comments, users.`username`, users.prof_img FROM users, posts, followers
         WHERE posts.user_id = followers.user_id
         AND users.id = posts.user_id
-        AND follower_id = :userid
-        ORDER BY posts.date_posted DESC LIMIT 20;', array(':userid' => $user_id));
+        AND follower_id = '".$user_id."'
+        ORDER BY posts.date_posted DESC LIMIT 20;");
         if ($followingposts != null) {
             $response = "[";
             foreach ($followingposts as $post) {
                 $formattedDate = date_create($post['date_posted']);
                 $formattedDate = date_format($formattedDate, 'M j, Y g:i A');
 
-                if ($db->query('SELECT user_id FROM post_likes WHERE post_id=:post_id AND user_id=:user_id', array(':post_id' => $post['id'], ':user_id' => $user_id))) {
+                if ($db->query($db->query("SELECT user_id FROM post_likes WHERE post_id='".$post['id']."' AND user_id='".$user_id."'"))) {
                     $liked = 1;
                 } else {
                     $liked = 0;
@@ -28,8 +27,10 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
                 $response .= "{";
                 $response .= '"PostId": "' . $post['id'] . '",';
+                $response .= '"PostType": "'. $post['type']. '",';
                 $response .= '"PostBody": "' . $post['body'] . '",';
                 $response .= '"PostedBy": "' . $post['username'] . '",';
+                $response .= '"PosterImg": "' .$post['prof_img'] . '",';
                 $response .= '"PostDate": "' . $formattedDate . '",';
                 $response .= '"PostLikes": "' . $post['likes'] . '",';
                 $response .= '"PostComments": "' . $post['comments'] . '",';
@@ -47,18 +48,18 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
     }
     elseif($page == 'profile') {
         $username = $_GET['username'];
-        $user_id = $db->query('SELECT id FROM users WHERE username=:username', array(':username'=>$username))[0]['id'];
+    $user_id = mysqli_fetch_assoc($db->query("SELECT id FROM users WHERE username='".$username."'"))['id'];
 
-        $followingposts = $db->query('SELECT posts.id, posts.body, posts.date_posted, posts.likes, posts.comments, users.`username` FROM users, posts
-        WHERE posts.user_id = :userid AND users.id = :userid
-        ORDER BY posts.date_posted DESC LIMIT 10;', array(':userid' => $user_id));
+        $followingposts = $db->query("SELECT posts.id, posts.type posts.body, posts.date_posted, posts.likes, posts.comments, users.`username`, users.prof_img FROM users, posts
+        WHERE posts.user_id = '".$user_id."' AND users.id = '".$user_id."'
+        ORDER BY posts.date_posted DESC LIMIT 10;");
         if ($followingposts != null) {
             $response = "[";
             foreach ($followingposts as $post) {
                 $formattedDate = date_create($post['date_posted']);
                 $formattedDate = date_format($formattedDate, 'M j, Y g:i A');
 
-                if ($db->query('SELECT user_id FROM post_likes WHERE post_id=:post_id AND user_id=:user_id', array(':post_id' => $post['id'], ':user_id' => $user_id))) {
+                if ($db->query("SELECT user_id FROM post_likes WHERE post_id='".$post['id']."' AND user_id='".$_SESSION['user']."'")) {
                     $liked = 1;
                 } else {
                     $liked = 0;
@@ -66,8 +67,10 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
                 $response .= "{";
                 $response .= '"PostId": "' . $post['id'] . '",';
+                $response .= '"PostType": "'. $post['type'] .'",';
                 $response .= '"PostBody": "' . $post['body'] . '",';
                 $response .= '"PostedBy": "' . $post['username'] . '",';
+                $response .= '"PosterImg": "' .$post['prof_img'] . '",';
                 $response .= '"PostDate": "' . $formattedDate . '",';
                 $response .= '"PostLikes": "' . $post['likes'] . '",';
                 $response .= '"PostComments": "' . $post['comments'] . '",';

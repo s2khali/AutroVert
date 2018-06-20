@@ -1,6 +1,5 @@
 <?php
 require_once ("DB.php");
-$db = new DB("localhost", "autrovert", "root", "");
 
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
     {

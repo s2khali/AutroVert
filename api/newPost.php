@@ -1,23 +1,26 @@
 <?php
 require_once ("DB.php");
-$db = new DB("localhost", "autrovert", "root", "");
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     # SUBMIT POST
 
-        $postBody = file_get_contents("php://input");
-        $postBody = json_decode($postBody);
+        $incomingPost = file_get_contents("php://input");
+        $incomingPost = json_decode($incomingPost);
 
-        $token = $_COOKIE['SNID'];
-        $user_id = $db->query("SELECT user_id FROM login_tokens WHERE token=:token", array(':token'=>sha1($token)))[0]['user_id'];
+        $userid = $_SESSION['user'];
 
-        $postText = $postBody->body;
+        $postType = $incomingPost->type;
+        $postText = $incomingPost->body;
 
         if(!$postText==null) {
-            $db->query('INSERT INTO posts VALUES (:id, :body, :user_id, NOW(),  0, 0)', array(':id' => null, ':body' => $postText, ':user_id' => $user_id));
-            json_encode("foo");
-        } else {
-            json_encode("bar");
+            if($db->query("INSERT INTO posts (type, body, user_id, date_posted, likes, comments) VALUES ('".$postType."','".$postText."', '".$userid."', NOW(),  0, 0);")){
+
+        $submittedpost = $db->query("SELECT posts.id, posts.type, posts.body, posts.date_posted, posts.likes, posts.comments, users.`username`, users.prof_img FROM users, posts
+        WHERE users.id='".$userid."' AND posts.id = (SELECT MAX(id) FROM posts WHERE user_id = '".$userid."')");
+        echo json_encode(mysqli_fetch_assoc($submittedpost));
+        }} else {
+            echo json_encode("bar");
         }
     }
