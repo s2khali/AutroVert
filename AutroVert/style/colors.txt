@@ -1,3 +1,0 @@
-#992424 red bg
-#910000 red txt
-#6B312D red bg2
