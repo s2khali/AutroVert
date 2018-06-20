@@ -1,0 +1,22 @@
+/* Top section */
+
+#profileTopSection{background: #fff; justify-content: center; display: flex; border: 1px solid #e6e6e6; border-radius: 2px;}
+#mainPhotoWrapper{max-height: 400px;}
+#mainPhoto{margin: 0 auto;}
+#mainPhoto img{display: block; width: auto; max-height: 400px;}
+
+.leftColumn{width: 300px !important;}
+.profileInfo{background: #fff; border: 1px solid #e6e6e6; border-radius: 2px;}
+.profileHeader{text-align: center; font-size: 24px; margin: 5px 10px; padding: 5px 0; border-bottom: 1px solid #c3c3c3}
+.profilePicWrapper{margin: 5px 10px; padding: 10px 0; display: block; border-bottom: 1px solid #c3c3c3;}
+.profilePicWrapper img{display: block; margin: 0 auto; padding: 5px; width: auto; max-height: 256px; border: 1px solid #e6e6e6}
+
+#profileInfo{  }
+.userInformation{list-style: none; border-bottom: 1px solid #c3c3c3; margin: 5px 10px; padding: 10px 0;}
+.userInformation h4{font-size: 16px; margin: 0 0 15px 15px;}
+.userInformation li{margin: 5px 40px; position: relative; font-size: 16px;}
+.userInformation li::before{content: ''; position: absolute; left: -25px; top: 0;  background-size: 20px 20px; height: 20px; width: 20px; background-position: center;}
+.realName::before{background: url(https://s3.us-east-2.amazonaws.com/autrovert/ico/user-ico.png) no-repeat;}
+.location::before{background: url(https://s3.us-east-2.amazonaws.com/autrovert/ico/location-ico.png) no-repeat;}
+.instagram::before{background: url(https://s3.us-east-2.amazonaws.com/autrovert/ico/instagram-ico.png) no-repeat; background-size: 25px  25px !important;}
+
